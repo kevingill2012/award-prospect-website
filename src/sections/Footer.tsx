@@ -46,7 +46,7 @@ export default function Footer() {
             <img
               src="/logo-nav.png"
               alt="Award Prospect"
-              className="h-14 w-auto"
+              className="h-20 w-auto"
             />
             <p className="text-sm leading-relaxed text-text-muted">
               {tr("footer.tagline", lang)}
