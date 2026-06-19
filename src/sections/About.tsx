@@ -84,15 +84,10 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl border border-white/8 bg-slate-soft/50"
+            className="flex items-center justify-center"
           >
-            <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 text-text-muted">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="opacity-40">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-              <span className="text-sm">{tr("about.imageCaption", lang)}</span>
-            </div>
+            <img src="/logo-nav.png?v=8" alt="Award Prospect"
+              className="h-auto w-full max-w-[500px] object-contain opacity-90" />
           </motion.div>
         </div>
       </div>

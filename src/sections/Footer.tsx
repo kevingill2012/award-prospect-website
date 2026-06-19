@@ -42,23 +42,23 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 — Company */}
-          <div className="space-y-4">
+          <div className="flex flex-col items-center text-center gap-3">
             <img
-              src="/logo-nav.png"
+              src="/logo-nav.png?v=8"
               alt="Award Prospect"
               className="h-20 w-auto"
             />
             <p className="text-sm leading-relaxed text-text-muted">
               {tr("footer.tagline", lang)}
             </p>
-            <div className="space-y-2 text-sm text-text-muted">
-              <div className="flex items-start gap-2">
+            <div className="space-y-2.5 text-left">
+              <div className="flex items-start gap-2.5">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-coral/60" />
-                <span className="text-xs leading-relaxed">{COMPANY.address}</span>
+                <span className="text-xs leading-relaxed text-text-muted/80">{COMPANY.address}</span>
               </div>
               <a
                 href={`mailto:${COMPANY.email}`}
-                className="flex items-center gap-2 text-coral hover:underline"
+                className="flex items-center gap-2.5 text-coral/80 hover:text-coral hover:underline"
               >
                 <Mail size={15} className="shrink-0" />
                 <span className="text-xs">{COMPANY.email}</span>
