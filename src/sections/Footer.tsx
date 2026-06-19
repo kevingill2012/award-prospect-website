@@ -44,9 +44,9 @@ export default function Footer() {
           {/* Column 1 — Company */}
           <div className="space-y-4">
             <img
-              src="/logo-footer.png"
+              src="/logo-nav.png"
               alt="Award Prospect"
-              className="h-14 w-auto"
+              className="h-14 w-auto mix-blend-screen brightness-125"
             />
             <p className="text-sm leading-relaxed text-text-muted">
               {tr("footer.tagline", lang)}
