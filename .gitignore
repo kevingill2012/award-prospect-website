@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+logo-footer.png
+logo-hero.png
+logo-nav.png
+logo-lg.png
+logo-original.jpg
+logo.jpg
+favicon.ico
+favicon.svg
+*.html
+*.txt
+_next/
+_not-found/
+deploy.sh

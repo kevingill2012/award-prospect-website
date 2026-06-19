@@ -562,6 +562,278 @@ export const t: TranslationDict = {
     "zh-TW": "© 2025 澳華發展有限公司 版權所有",
     ar: "© 2025 Award Prospect Limited. جميع الحقوق محفوظة.",
   },
+
+  // ---- Footer Columns ----
+  "footer.quickLinks": {
+    en: "Quick Links",
+    "zh-CN": "快速链接",
+    "zh-TW": "快速連結",
+    ar: "روابط سريعة",
+  },
+  "footer.legal": {
+    en: "Legal",
+    "zh-CN": "法律条款",
+    "zh-TW": "法律條款",
+    ar: "قانوني",
+  },
+  "footer.privacy": {
+    en: "Privacy Policy",
+    "zh-CN": "隐私政策",
+    "zh-TW": "隱私政策",
+    ar: "سياسة الخصوصية",
+  },
+  "footer.terms": {
+    en: "Terms of Service",
+    "zh-CN": "服务条款",
+    "zh-TW": "服務條款",
+    ar: "شروط الخدمة",
+  },
+  "footer.cookies": {
+    en: "Cookie Policy",
+    "zh-CN": "Cookie 政策",
+    "zh-TW": "Cookie 政策",
+    ar: "سياسة ملفات تعريف الارتباط",
+  },
+  "footer.followUs": {
+    en: "Follow Us",
+    "zh-CN": "关注我们",
+    "zh-TW": "關注我們",
+    ar: "تابعنا",
+  },
+  "footer.contactUs": {
+    en: "Contact Us",
+    "zh-CN": "联系我们",
+    "zh-TW": "聯繫我們",
+    ar: "اتصل بنا",
+  },
+
+  // ---- Legal: Privacy Policy ----
+  "privacy.title": {
+    en: "Privacy Policy",
+    "zh-CN": "隐私政策",
+    "zh-TW": "隱私政策",
+    ar: "سياسة الخصوصية",
+  },
+  "privacy.lastUpdated": {
+    en: "Last updated: June 2025",
+    "zh-CN": "最后更新：2025年6月",
+    "zh-TW": "最後更新：2025年6月",
+    ar: "آخر تحديث: يونيو 2025",
+  },
+  "privacy.intro": {
+    en: "Award Prospect Limited (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.",
+    "zh-CN": "澳華發展有限公司（「我们」或「我们的」）致力于保护您的隐私。本隐私政策说明我们在您访问我们的网站或使用我们的服务时，如何收集、使用、披露和保护您的信息。",
+    "zh-TW": "澳華發展有限公司（「我們」或「我們的」）致力於保護您的隱私。本隱私政策說明我們在您訪問我們的網站或使用我們的服務時，如何收集、使用、披露和保護您的信息。",
+    ar: "تلتزم Award Prospect Limited (\"نحن\" أو \"خاصتنا\") بحماية خصوصيتك. تشرح سياسة الخصوصية هذه كيف نجمع ونستخدم ونفصح ونحمي معلوماتك عند زيارتك لموقعنا الإلكتروني أو تعاملك مع خدماتنا.",
+  },
+  "privacy.collect.title": {
+    en: "Information We Collect",
+    "zh-CN": "我们收集的信息",
+    "zh-TW": "我們收集的信息",
+    ar: "المعلومات التي نجمعها",
+  },
+  "privacy.collect.text": {
+    en: "We may collect the following types of information:\n\n• Contact Information: Name, email address, phone number, and company details when you submit an inquiry or contact form.\n• Usage Data: IP address, browser type, operating system, pages visited, and time spent on our site through standard web analytics.\n• Communication Records: Emails, messages, and other correspondence you send to us.",
+    "zh-CN": "我们可能收集以下类型的信息：\n\n• 联系信息：当您提交咨询或联系表单时，您的姓名、邮箱地址、电话号码和公司信息。\n• 使用数据：通过标准网站分析收集的 IP 地址、浏览器类型、操作系统、访问页面和停留时间。\n• 通信记录：您发送给我们的电子邮件、消息和其他通信内容。",
+    "zh-TW": "我們可能收集以下類型的信息：\n\n• 聯繫信息：當您提交諮詢或聯繫表單時，您的姓名、郵箱地址、電話號碼和公司信息。\n• 使用數據：通過標準網站分析收集的 IP 地址、瀏覽器類型、操作系統、訪問頁面和停留時間。\n• 通信記錄：您發送給我們的電子郵件、消息和其他通信內容。",
+    ar: "قد نجمع الأنواع التالية من المعلومات:\n\n• معلومات الاتصال: الاسم وعنوان البريد الإلكتروني ورقم الهاتف وتفاصيل الشركة عند تقديم استفسار أو نموذج اتصال.\n• بيانات الاستخدام: عنوان IP ونوع المتصفح ونظام التشغيل والصفحات التي تمت زيارتها والوقت المستغرق في موقعنا من خلال تحليلات الويب القياسية.\n• سجلات الاتصال: رسائل البريد الإلكتروني والرسائل والمراسلات الأخرى التي ترسلها إلينا.",
+  },
+  "privacy.use.title": {
+    en: "How We Use Your Information",
+    "zh-CN": "我们如何使用您的信息",
+    "zh-TW": "我們如何使用您的信息",
+    ar: "كيف نستخدم معلوماتك",
+  },
+  "privacy.use.text": {
+    en: "We use the information we collect to:\n\n• Respond to your inquiries and provide our services.\n• Improve our website and user experience.\n• Communicate with you about our services, updates, and relevant business opportunities.\n• Comply with legal obligations and protect our legal rights.",
+    "zh-CN": "我们使用收集的信息用于：\n\n• 回复您的咨询并提供我们的服务。\n• 改进我们的网站和用户体验。\n• 就我们的服务、更新和相关商业机会与您沟通。\n• 遵守法律义务并保护我们的合法权益。",
+    "zh-TW": "我們使用收集的信息用於：\n\n• 回覆您的諮詢並提供我們的服務。\n• 改進我們的網站和用戶體驗。\n• 就我們的服務、更新和相關商業機會與您溝通。\n• 遵守法律義務並保護我們的合法權益。",
+    ar: "نستخدم المعلومات التي نجمعها من أجل:\n\n• الرد على استفساراتك وتقديم خدماتنا.\n• تحسين موقعنا الإلكتروني وتجربة المستخدم.\n• التواصل معك بشأن خدماتنا وتحديثاتنا وفرص العمل ذات الصلة.\n• الامتثال للالتزامات القانونية وحماية حقوقنا القانونية.",
+  },
+  "privacy.share.title": {
+    en: "Information Sharing",
+    "zh-CN": "信息共享",
+    "zh-TW": "信息共享",
+    ar: "مشاركة المعلومات",
+  },
+  "privacy.share.text": {
+    en: "We do not sell, trade, or rent your personal information to third parties. We may share information with:\n\n• Service providers who assist us in operating our website and business.\n• Legal authorities when required by applicable law.\n• Affiliated companies within our corporate group.",
+    "zh-CN": "我们不会向第三方出售、交易或出租您的个人信息。我们可能与以下方共享信息：\n\n• 协助我们运营网站和业务的服务提供商。\n• 适用法律要求的法律机关。\n• 我们企业集团内的关联公司。",
+    "zh-TW": "我們不會向第三方出售、交易或出租您的個人信息。我們可能與以下方共享信息：\n\n• 協助我們運營網站和業務的服務提供商。\n• 適用法律要求的法律機關。\n• 我們企業集團內的關聯公司。",
+    ar: "نحن لا نبيع أو نتاجر أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك المعلومات مع:\n\n• مزودي الخدمات الذين يساعدوننا في تشغيل موقعنا الإلكتروني وأعمالنا.\n• السلطات القانونية عندما يقتضي القانون المعمول به ذلك.\n• الشركات التابعة ضمن مجموعتنا المؤسسية.",
+  },
+  "privacy.cookies.title": {
+    en: "Cookies",
+    "zh-CN": "Cookie 政策",
+    "zh-TW": "Cookie 政策",
+    ar: "ملفات تعريف الارتباط",
+  },
+  "privacy.cookies.text": {
+    en: "Our website uses essential cookies to ensure proper functionality, and analytics cookies to understand how visitors interact with our site. You can control cookie preferences through your browser settings. For more details, please see our Cookie Policy.",
+    "zh-CN": "我们的网站使用必要的 Cookie 以确保正常运行，以及分析 Cookie 以了解访客如何与我们的网站互动。您可以通过浏览器设置控制 Cookie 偏好。更多详情请参阅我们的 Cookie 政策。",
+    "zh-TW": "我們的網站使用必要的 Cookie 以確保正常運行，以及分析 Cookie 以了解訪客如何與我們的網站互動。您可以通過瀏覽器設置控制 Cookie 偏好。更多詳情請參閱我們的 Cookie 政策。",
+    ar: "يستخدم موقعنا الإلكتروني ملفات تعريف الارتباط الأساسية لضمان الوظائف السليمة، وملفات تعريف الارتباط التحليلية لفهم كيفية تفاعل الزوار مع موقعنا. يمكنك التحكم في تفضيلات ملفات تعريف الارتباط من خلال إعدادات المتصفح. لمزيد من التفاصيل، يرجى الاطلاع على سياسة ملفات تعريف الارتباط الخاصة بنا.",
+  },
+  "privacy.rights.title": {
+    en: "Your Rights",
+    "zh-CN": "您的权利",
+    "zh-TW": "您的權利",
+    ar: "حقوقك",
+  },
+  "privacy.rights.text": {
+    en: "Depending on your jurisdiction, you may have the right to:\n\n• Access the personal data we hold about you.\n• Request correction of inaccurate data.\n• Request deletion of your personal data.\n• Object to or restrict processing of your data.\n• Data portability.\n\nTo exercise any of these rights, please contact us at kevin@awardprospect.com.",
+    "zh-CN": "根据您所在的司法管辖区，您可能有权：\n\n• 访问我们持有的关于您的个人数据。\n• 要求更正不准确的数据。\n• 要求删除您的个人数据。\n• 反对或限制对您数据的处理。\n• 数据可移植性。\n\n如需行使任何这些权利，请通过 kevin@awardprospect.com 联系我们。",
+    "zh-TW": "根據您所在的司法管轄區，您可能有權：\n\n• 訪問我們持有的關於您的個人數據。\n• 要求更正不準確的數據。\n• 要求刪除您的個人數據。\n• 反對或限制對您數據的處理。\n• 數據可移植性。\n\n如需行使任何這些權利，請通過 kevin@awardprospect.com 聯繫我們。",
+    ar: "حسب اختصاصك القضائي، قد يكون لك الحق في:\n\n• الوصول إلى البيانات الشخصية التي نحتفظ بها عنك.\n• طلب تصحيح البيانات غير الدقيقة.\n• طلب حذف بياناتك الشخصية.\n• الاعتراض على معالجة بياناتك أو تقييدها.\n• قابلية نقل البيانات.\n\nلممارسة أي من هذه الحقوق، يرجى الاتصال بنا على kevin@awardprospect.com.",
+  },
+  "privacy.contact.title": {
+    en: "Contact Us",
+    "zh-CN": "联系我们",
+    "zh-TW": "聯繫我們",
+    ar: "اتصل بنا",
+  },
+  "privacy.contact.text": {
+    en: "If you have any questions about this Privacy Policy, please contact us at:\n\nAward Prospect Limited\nFlat/Rm 307, Kam Hon Industrial Building\n8 Wang Kwun Road, Kowloon Bay\nHong Kong\n\nEmail: kevin@awardprospect.com",
+    "zh-CN": "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：\n\n澳華發展有限公司\n香港九龙九龙湾宏冠道八号\n金汉工业大厦307室\n\n邮箱：kevin@awardprospect.com",
+    "zh-TW": "如果您對本隱私政策有任何疑問，請通過以下方式聯繫我們：\n\n澳華發展有限公司\n香港九龍九龍灣宏冠道八號\n金漢工業大廈307室\n\n郵箱：kevin@awardprospect.com",
+    ar: "إذا كانت لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:\n\nAward Prospect Limited\nFlat/Rm 307, Kam Hon Industrial Building\n8 Wang Kwun Road, Kowloon Bay\nHong Kong\n\nالبريد الإلكتروني: kevin@awardprospect.com",
+  },
+
+  // ---- Legal: Terms of Service ----
+  "terms.title": {
+    en: "Terms of Service",
+    "zh-CN": "服务条款",
+    "zh-TW": "服務條款",
+    ar: "شروط الخدمة",
+  },
+  "terms.lastUpdated": {
+    en: "Last updated: June 2025",
+    "zh-CN": "最后更新：2025年6月",
+    "zh-TW": "最後更新：2025年6月",
+    ar: "آخر تحديث: يونيو 2025",
+  },
+  "terms.intro": {
+    en: "Welcome to Award Prospect Limited. By accessing or using our website and services, you agree to be bound by these Terms of Service. Please read them carefully before using our site.",
+    "zh-CN": "欢迎访问澳華發展有限公司。访问或使用我们的网站和服务，即表示您同意受本服务条款的约束。在使用我们的网站之前，请仔细阅读本条款。",
+    "zh-TW": "歡迎訪問澳華發展有限公司。訪問或使用我們的網站和服務，即表示您同意受本服務條款的約束。在使用我們的網站之前，請仔細閱讀本條款。",
+    ar: "مرحبًا بكم في Award Prospect Limited. من خلال الوصول إلى موقعنا الإلكتروني وخدماتنا أو استخدامهما، فإنك توافق على الالتزام بشروط الخدمة هذه. يرجى قراءتها بعناية قبل استخدام موقعنا.",
+  },
+  "terms.service.title": {
+    en: "Services",
+    "zh-CN": "服务",
+    "zh-TW": "服務",
+    ar: "الخدمات",
+  },
+  "terms.service.text": {
+    en: "Award Prospect Limited provides cross-border procurement, supply chain management, logistics, and distribution services. All services are subject to separate agreements and are governed by the terms specified in those agreements. Information on this website is for general informational purposes only and does not constitute a binding offer.",
+    "zh-CN": "澳華發展有限公司提供跨境采购、供应链管理、物流和分销服务。所有服务均受单独协议的约束，并受该等协议中规定的条款管辖。本网站上的信息仅供一般参考，不构成具有约束力的要约。",
+    "zh-TW": "澳華發展有限公司提供跨境採購、供應鏈管理、物流和分銷服務。所有服務均受單獨協議的約束，並受該等協議中規定的條款管轄。本網站上的信息僅供一般參考，不構成具有約束力的要約。",
+    ar: "تقدم Award Prospect Limited خدمات المشتريات عبر الحدود وإدارة سلسلة التوريد والخدمات اللوجستية والتوزيع. تخضع جميع الخدمات لاتفاقيات منفصلة وتحكمها الشروط المحددة في تلك الاتفاقيات. المعلومات على هذا الموقع هي لأغراض إعلامية عامة فقط ولا تشكل عرضًا ملزمًا.",
+  },
+  "terms.ip.title": {
+    en: "Intellectual Property",
+    "zh-CN": "知识产权",
+    "zh-TW": "知識產權",
+    ar: "الملكية الفكرية",
+  },
+  "terms.ip.text": {
+    en: "All content on this website, including text, graphics, logos, images, and software, is the property of Award Prospect Limited or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, or use any content without our prior written consent.",
+    "zh-CN": "本网站上的所有内容，包括文字、图形、标志、图像和软件，均为澳華發展有限公司或其内容供应商的财产，受适用的知识产权法保护。未经我们事先书面同意，您不得复制、分发或使用任何内容。",
+    "zh-TW": "本網站上的所有內容，包括文字、圖形、標誌、圖像和軟件，均為澳華發展有限公司或其內容供應商的財產，受適用的知識產權法保護。未經我們事先書面同意，您不得複製、分發或使用任何內容。",
+    ar: "جميع المحتويات على هذا الموقع الإلكتروني، بما في ذلك النصوص والرسومات والشعارات والصور والبرمجيات، هي ملك لشركة Award Prospect Limited أو موردي المحتوى التابعين لها ومحمية بموجب قوانين الملكية الفكرية المعمول بها. لا يجوز لك إعادة إنتاج أو توزيع أو استخدام أي محتوى دون موافقتنا الكتابية المسبقة.",
+  },
+  "terms.liability.title": {
+    en: "Limitation of Liability",
+    "zh-CN": "责任限制",
+    "zh-TW": "責任限制",
+    ar: "تحديد المسؤولية",
+  },
+  "terms.liability.text": {
+    en: "To the fullest extent permitted by law, Award Prospect Limited shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of this website or our services. We make no warranties or representations about the accuracy or completeness of the website content.",
+    "zh-CN": "在法律允许的最大范围内，澳華發展有限公司不对因使用本网站或我们的服务而产生的任何直接、间接、附带、后果性或惩罚性损害赔偿承担责任。我们对网站内容的准确性或完整性不作任何保证或陈述。",
+    "zh-TW": "在法律允許的最大範圍內，澳華發展有限公司不對因使用本網站或我們的服務而產生的任何直接、間接、附帶、後果性或懲罰性損害賠償承擔責任。我們對網站內容的準確性或完整性不作任何保證或陳述。",
+    ar: "إلى أقصى حد يسمح به القانون، لن تكون Award Prospect Limited مسؤولة عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو تبعية أو عقابية ناشئة عن استخدامك لهذا الموقع الإلكتروني أو خدماتنا. نحن لا نقدم أي ضمانات أو إقرارات حول دقة أو اكتمال محتوى الموقع.",
+  },
+  "terms.governing.title": {
+    en: "Governing Law",
+    "zh-CN": "适用法律",
+    "zh-TW": "適用法律",
+    ar: "القانون الحاكم",
+  },
+  "terms.governing.text": {
+    en: "These Terms of Service shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Hong Kong.",
+    "zh-CN": "本服务条款受香港特别行政区法律管辖并据其解释。因本条款引起的任何争议应受香港法院的专属管辖。",
+    "zh-TW": "本服務條款受香港特別行政區法律管轄並據其解釋。因本條款引起的任何爭議應受香港法院的專屬管轄。",
+    ar: "تخضع شروط الخدمة هذه لقوانين منطقة هونغ كونغ الإدارية الخاصة وتفسر وفقًا لها. تخضع أي نزاعات تنشأ عن هذه الشروط للاختصاص القضائي الحصري لمحاكم هونغ كونغ.",
+  },
+  "terms.contact.title": {
+    en: "Contact",
+    "zh-CN": "联系",
+    "zh-TW": "聯繫",
+    ar: "اتصل",
+  },
+  "terms.contact.text": {
+    en: "For questions about these Terms of Service, please contact us at kevin@awardprospect.com.",
+    "zh-CN": "如对本服务条款有疑问，请通过 kevin@awardprospect.com 联系我们。",
+    "zh-TW": "如對本服務條款有疑問，請通過 kevin@awardprospect.com 聯繫我們。",
+    ar: "للأسئلة حول شروط الخدمة هذه، يرجى الاتصال بنا على kevin@awardprospect.com.",
+  },
+
+  // ---- Legal: Cookie Policy ----
+  "cookies.title": {
+    en: "Cookie Policy",
+    "zh-CN": "Cookie 政策",
+    "zh-TW": "Cookie 政策",
+    ar: "سياسة ملفات تعريف الارتباط",
+  },
+  "cookies.lastUpdated": {
+    en: "Last updated: June 2025",
+    "zh-CN": "最后更新：2025年6月",
+    "zh-TW": "最後更新：2025年6月",
+    ar: "آخر تحديث: يونيو 2025",
+  },
+  "cookies.intro": {
+    en: "This Cookie Policy explains how Award Prospect Limited uses cookies and similar technologies on our website. By using our website, you consent to the use of cookies as described in this policy.",
+    "zh-CN": "本 Cookie 政策说明澳華發展有限公司如何在我们网站上使用 Cookie 及类似技术。使用我们的网站即表示您同意按照本政策所述使用 Cookie。",
+    "zh-TW": "本 Cookie 政策說明澳華發展有限公司如何在我們網站上使用 Cookie 及類似技術。使用我們的網站即表示您同意按照本政策所述使用 Cookie。",
+    ar: "تشرح سياسة ملفات تعريف الارتباط هذه كيف تستخدم Award Prospect Limited ملفات تعريف الارتباط والتقنيات المماثلة على موقعنا الإلكتروني. باستخدام موقعنا الإلكتروني، فإنك توافق على استخدام ملفات تعريف الارتباط كما هو موضح في هذه السياسة.",
+  },
+  "cookies.what.title": {
+    en: "What Are Cookies",
+    "zh-CN": "什么是 Cookie",
+    "zh-TW": "什麼是 Cookie",
+    ar: "ما هي ملفات تعريف الارتباط",
+  },
+  "cookies.what.text": {
+    en: "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the site owners. Cookies may be \"session\" cookies (deleted when you close your browser) or \"persistent\" cookies (remain until they expire or are deleted).",
+    "zh-CN": "Cookie 是您访问网站时放置在您设备上的小型文本文件。它们被广泛用于使网站更有效地运行，以及向网站所有者提供信息。Cookie 可能是「会话」Cookie（关闭浏览器时删除）或「持久」Cookie（保留直到过期或被删除）。",
+    "zh-TW": "Cookie 是您訪問網站時放置在您設備上的小型文本文件。它們被廣泛用於使網站更有效地運行，以及向網站所有者提供信息。Cookie 可能是「會話」Cookie（關閉瀏覽器時刪除）或「持久」Cookie（保留直到過期或被刪除）。",
+    ar: "ملفات تعريف الارتباط هي ملفات نصية صغيرة توضع على جهازك عند زيارتك لموقع إلكتروني. تُستخدم على نطاق واسع لجعل المواقع الإلكترونية تعمل بكفاءة أكبر، وكذلك لتوفير معلومات لأصحاب المواقع. قد تكون ملفات تعريف الارتباط \"جلسة\" (تُحذف عند إغلاق المتصفح) أو \"دائمة\" (تبقى حتى تنتهي صلاحيتها أو تُحذف).",
+  },
+  "cookies.types.title": {
+    en: "Types of Cookies We Use",
+    "zh-CN": "我们使用的 Cookie 类型",
+    "zh-TW": "我們使用的 Cookie 類型",
+    ar: "أنواع ملفات تعريف الارتباط التي نستخدمها",
+  },
+  "cookies.types.text": {
+    en: "Essential Cookies: These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility. You may disable these by changing your browser settings, but this may affect how the website functions.\n\nAnalytics Cookies: These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us know which pages are the most and least popular and see how visitors move around the site.\n\nFunctional Cookies: These cookies enable the website to provide enhanced functionality and personalization, such as remembering your language preference.",
+    "zh-CN": "必要 Cookie：这些 Cookie 是网站正常运行所必需的。它们支持核心功能，如安全、网络管理和可访问性。您可以通过更改浏览器设置禁用这些 Cookie，但这可能会影响网站的功能。\n\n分析 Cookie：这些 Cookie 使我们能够统计访问量和流量来源，以便我们衡量和改进网站的性能。它们帮助我们了解哪些页面最受欢迎和最少受欢迎，并查看访客如何在网站上移动。\n\n功能 Cookie：这些 Cookie 使网站能够提供增强的功能和个性化，例如记住您的语言偏好。",
+    "zh-TW": "必要 Cookie：這些 Cookie 是網站正常運行所必需的。它們支持核心功能，如安全、網絡管理和可訪問性。您可以通過更改瀏覽器設置禁用這些 Cookie，但這可能會影響網站的功能。\n\n分析 Cookie：這些 Cookie 使我們能夠統計訪問量和流量來源，以便我們衡量和改進網站性能。它們幫助我們了解哪些頁面最受歡迎和最少受歡迎，並查看訪客如何在網站上移動。\n\n功能 Cookie：這些 Cookie 使網站能夠提供增強的功能和個性化，例如記住您的語言偏好。",
+    ar: "ملفات تعريف الارتباط الأساسية: هذه الملفات ضرورية لعمل الموقع الإلكتروني بشكل صحيح. تمكن الوظائف الأساسية مثل الأمان وإدارة الشبكة وإمكانية الوصول. يمكنك تعطيلها عن طريق تغيير إعدادات المتصفح، لكن هذا قد يؤثر على كيفية عمل الموقع.\n\nملفات تعريف الارتباط التحليلية: تسمح لنا هذه الملفات بإحصاء الزيارات ومصادر الزيارات حتى نتمكن من قياس وتحسين أداء موقعنا. تساعدنا في معرفة الصفحات الأكثر والأقل شعبية ورؤية كيفية تنقل الزوار في الموقع.\n\nملفات تعريف الارتباط الوظيفية: تمكن هذه الملفات الموقع الإلكتروني من توفير وظائف محسنة وتخصيص، مثل تذكر تفضيل اللغة الخاص بك.",
+  },
+  "cookies.control.title": {
+    en: "Managing Cookies",
+    "zh-CN": "管理 Cookie",
+    "zh-TW": "管理 Cookie",
+    ar: "إدارة ملفات تعريف الارتباط",
+  },
+  "cookies.control.text": {
+    en: "Most web browsers allow you to control cookies through their settings preferences. You can set your browser to block or alert you about these cookies, but some parts of the site may not work as a result. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit www.allaboutcookies.org.",
+    "zh-CN": "大多数网络浏览器允许您通过其设置偏好来控制 Cookie。您可以将浏览器设置为阻止或提醒您这些 Cookie，但网站的某些部分可能因此无法正常工作。要了解更多关于 Cookie 的信息，包括如何查看已设置的 Cookie 以及如何管理和删除它们，请访问 www.allaboutcookies.org。",
+    "zh-TW": "大多數網絡瀏覽器允許您通過其設置偏好來控制 Cookie。您可以將瀏覽器設置為阻止或提醒您這些 Cookie，但網站的某些部分可能因此無法正常工作。要了解更多關於 Cookie 的信息，包括如何查看已設置的 Cookie 以及如何管理和刪除它們，請訪問 www.allaboutcookies.org。",
+    ar: "تسمح لك معظم متصفحات الويب بالتحكم في ملفات تعريف الارتباط من خلال تفضيلات الإعدادات. يمكنك ضبط متصفحك لحظر أو تنبيهك بشأن ملفات تعريف الارتباط هذه، ولكن قد لا تعمل بعض أجزاء الموقع نتيجة لذلك. لمعرفة المزيد عن ملفات تعريف الارتباط، بما في ذلك كيفية رؤية ملفات تعريف الارتباط التي تم تعيينها وكيفية إدارتها وحذفها، قم بزيارة www.allaboutcookies.org.",
+  },
 };
 
 // Helper: get translation

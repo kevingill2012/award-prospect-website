@@ -28,15 +28,14 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "glass py-3" : "bg-transparent py-5"
+        scrolled ? "bg-deep py-3 shadow-lg shadow-black/30" : "bg-deep py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold tracking-tight">
-            Award<span className="text-coral">Prospect</span>
-          </span>
+        <a href="#" className="flex items-center">
+          <img src="/logo-nav.png" alt="Award Prospect"
+            className="h-10 w-auto mix-blend-screen brightness-125" />
         </a>
 
         {/* Desktop links + language */}

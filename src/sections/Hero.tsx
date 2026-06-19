@@ -76,6 +76,242 @@ export default function Hero() {
     };
   }, []);
 
+  // Spinning wireframe globe with cities on the right side
+  useEffect(() => {
+    const canvas = document.getElementById("globe-canvas") as HTMLCanvasElement | null;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animId: number;
+    let angle = 0;
+
+    const dpr = window.devicePixelRatio || 1;
+    const size = 380;
+    canvas.width = size * dpr;
+    canvas.height = size * dpr;
+    canvas.style.width = "380px";
+    canvas.style.height = "380px";
+    ctx.scale(dpr, dpr);
+
+    const cx = size / 2;
+    const cy = size / 2;
+    const R = 150;
+    const DEG = Math.PI / 180;
+
+    // Major global cities: [name, lat, lng]
+    const CITIES: [string, number, number][] = [
+      ["Hong Kong", 22.3, 114.2],
+      ["Shanghai", 31.2, 121.5],
+      ["Tokyo", 35.7, 139.7],
+      ["Dubai", 25.2, 55.3],
+      ["Singapore", 1.3, 103.8],
+      ["London", 51.5, -0.1],
+      ["Paris", 48.9, 2.3],
+      ["New York", 40.7, -74.0],
+      ["Los Angeles", 34.1, -118.2],
+      ["Sydney", -33.9, 151.2],
+      ["Mumbai", 19.1, 72.9],
+      ["Moscow", 55.8, 37.6],
+      ["Istanbul", 41.0, 29.0],
+      ["Seoul", 37.6, 127.0],
+      ["Bangkok", 13.8, 100.5],
+      ["Kuala Lumpur", 3.2, 101.7],
+      ["Frankfurt", 50.1, 8.7],
+      ["Amsterdam", 52.4, 4.9],
+      ["San Francisco", 37.8, -122.4],
+    ];
+
+    // City lookup by name
+    const cityMap = new Map<string, [number, number]>();
+    for (const [name, lat, lng] of CITIES) {
+      cityMap.set(name, [lat, lng]);
+    }
+
+    // Flight routes between cities [cityA, cityB]
+    const ROUTES: [string, string][] = [
+      ["Hong Kong", "London"],
+      ["Hong Kong", "Dubai"],
+      ["Hong Kong", "Singapore"],
+      ["Hong Kong", "Tokyo"],
+      ["Hong Kong", "Sydney"],
+      ["Hong Kong", "New York"],
+      ["Hong Kong", "San Francisco"],
+      ["Shanghai", "Los Angeles"],
+      ["Tokyo", "New York"],
+      ["Tokyo", "Los Angeles"],
+      ["Tokyo", "Seoul"],
+      ["Seoul", "London"],
+      ["Singapore", "Dubai"],
+      ["Singapore", "London"],
+      ["Singapore", "Sydney"],
+      ["Dubai", "London"],
+      ["Dubai", "Mumbai"],
+      ["Dubai", "Istanbul"],
+      ["London", "New York"],
+      ["London", "Paris"],
+      ["London", "Frankfurt"],
+      ["London", "Amsterdam"],
+      ["Paris", "New York"],
+      ["New York", "Los Angeles"],
+      ["New York", "San Francisco"],
+      ["Bangkok", "Singapore"],
+      ["Bangkok", "Hong Kong"],
+      ["Kuala Lumpur", "Singapore"],
+      ["Mumbai", "Dubai"],
+      ["Moscow", "London"],
+      ["Istanbul", "Moscow"],
+      ["Istanbul", "London"],
+      ["Frankfurt", "Amsterdam"],
+      ["Sydney", "Los Angeles"],
+      ["San Francisco", "Tokyo"],
+    ];
+
+    const draw = () => {
+      ctx.clearRect(0, 0, size, size);
+      angle += 0.004;
+
+      // ---- Glow ----
+      const glow = ctx.createRadialGradient(cx, cy, R - 10, cx, cy, R + 50);
+      glow.addColorStop(0, "rgba(233, 69, 96, 0.12)");
+      glow.addColorStop(0.5, "rgba(233, 69, 96, 0.04)");
+      glow.addColorStop(1, "rgba(233, 69, 96, 0)");
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, size, size);
+
+      // ---- Globe outline ----
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(233, 69, 96, 0.25)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // ---- Longitude lines ----
+      for (let i = 0; i < 16; i++) {
+        const theta = (i / 16) * Math.PI * 2 + angle;
+        const cosT = Math.cos(theta);
+        if (cosT < 0) continue;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, Math.abs(cosT) * R, R, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(233, 69, 96, ${0.06 + 0.12 * cosT})`;
+        ctx.lineWidth = 0.7;
+        ctx.stroke();
+      }
+
+      // ---- Latitude lines ----
+      for (let i = -3; i <= 3; i++) {
+        if (i === 0) continue;
+        const yOff = (i / 3.5) * R;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy + yOff, Math.sqrt(R * R - yOff * yOff), 4, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(233, 69, 96, 0.06)";
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      // Equator
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, R, 5, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(233, 69, 96, 0.1)";
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // ---- Flight routes (curved arcs) ----
+      const project = (lat: number, lng: number): { px: number; py: number; z: number } | null => {
+        const lngRad = lng * DEG;
+        const latRad = lat * DEG;
+        const rx = lngRad + angle;
+        const x3 = Math.cos(latRad) * Math.sin(rx);
+        const y3 = Math.sin(latRad);
+        const z3 = Math.cos(latRad) * Math.cos(rx);
+        if (z3 <= 0) return null;
+        return { px: cx + x3 * R, py: cy - y3 * R, z: z3 };
+      };
+
+      ctx.lineWidth = 0.6;
+      for (const [a, b] of ROUTES) {
+        const ca = cityMap.get(a);
+        const cb = cityMap.get(b);
+        if (!ca || !cb) continue;
+        const p1 = project(ca[0], ca[1]);
+        const p2 = project(cb[0], cb[1]);
+        if (!p1 || !p2) continue;
+
+        // Midpoint with bulge for arc
+        const mx = (p1.px + p2.px) / 2;
+        const my = (p1.py + p2.py) / 2;
+        const dist = Math.sqrt((p2.px - p1.px) ** 2 + (p2.py - p1.py) ** 2);
+        const bulge = dist * 0.2;
+        const dx = p2.px - p1.px;
+        const dy = p2.py - p1.py;
+        const nx = -dy / (dist || 1);
+        const ny = dx / (dist || 1);
+        const cpx = mx + nx * bulge;
+        const cpy = my + ny * bulge;
+
+        const avgZ = (p1.z + p2.z) / 2;
+        ctx.beginPath();
+        ctx.moveTo(p1.px, p1.py);
+        ctx.quadraticCurveTo(cpx, cpy, p2.px, p2.py);
+        ctx.strokeStyle = `rgba(233, 69, 96, ${0.04 + 0.12 * avgZ})`;
+        ctx.stroke();
+      }
+
+      // ---- Cities ----
+      for (const [name, lat, lng] of CITIES) {
+        // Orthographic projection: rotate longitude by angle
+        const lngRad = lng * DEG;
+        const latRad = lat * DEG;
+        const rotatedLng = lngRad + angle;
+
+        // 3D position on unit sphere
+        const x3 = Math.cos(latRad) * Math.sin(rotatedLng);
+        const y3 = Math.sin(latRad);
+        const z3 = Math.cos(latRad) * Math.cos(rotatedLng);
+
+        // Only draw if on the visible (front) side
+        if (z3 <= 0) continue;
+
+        // Project to 2D canvas
+        const px = cx + x3 * R;
+        const py = cy - y3 * R;
+
+        // Skip if outside globe boundary
+        const dist = Math.sqrt((px - cx) ** 2 + (py - cy) ** 2);
+        if (dist > R - 2) continue;
+
+        // Dot
+        ctx.beginPath();
+        ctx.arc(px, py, 3, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(233, 69, 96, 0.9)";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(233, 69, 96, 0.2)";
+        ctx.fill();
+
+        // City name
+        ctx.font = "10px -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+        ctx.textAlign = "center";
+        ctx.fillText(name, px, py - 8);
+      }
+
+      // Subtle highlight
+      const grad = ctx.createRadialGradient(cx - 30, cy - 30, 0, cx, cy, R);
+      grad.addColorStop(0, "rgba(233, 69, 96, 0.04)");
+      grad.addColorStop(1, "rgba(233, 69, 96, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.fill();
+
+      animId = requestAnimationFrame(draw);
+    };
+    draw();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 z-0" aria-hidden="true" />
@@ -127,14 +363,9 @@ export default function Hero() {
             className="hidden items-center justify-center lg:flex"
           >
             <div className="relative flex items-center justify-center">
-              {/* Glow behind logo */}
               <div className="absolute h-64 w-64 rounded-full bg-coral/10 blur-3xl" />
               <div className="absolute h-48 w-48 rounded-full bg-violet-deep/10 blur-2xl" />
-              <img
-                src="/logo-hero.png"
-                alt="Award Prospect"
-                className="relative h-auto w-[380px] max-w-none drop-shadow-[0_0_40px_rgba(233,69,96,0.12)]"
-              />
+              <canvas id="globe-canvas" width="380" height="380" className="relative h-auto w-[380px]" />
             </div>
           </motion.div>
         </div>
