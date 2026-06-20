@@ -86,8 +86,8 @@ export default function About() {
             viewport={{ once: true }}
             className="flex items-center justify-center"
           >
-            <img src="/logo-nav.png?v=8" alt="Award Prospect"
-              className="h-auto w-full max-w-[500px] object-contain opacity-90" />
+            <img src="/logo-about.png" alt="Award Prospect"
+              className="h-auto w-auto max-w-[500px] object-contain opacity-90" />
           </motion.div>
         </div>
       </div>
