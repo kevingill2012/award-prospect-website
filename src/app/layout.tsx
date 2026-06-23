@@ -54,6 +54,31 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <LanguageProvider>{children}</LanguageProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  try {
+    var d = document, w = window, n = navigator;
+    var data = {
+      path: d.location.pathname || "/",
+      referrer: d.referrer || "",
+      user_agent: n.userAgent || "",
+      language: (n.languages && n.languages[0]) || n.language || "",
+      screen_width: w.screen.width || 0,
+      screen_height: w.screen.height || 0,
+      timezone_offset: new Date().getTimezoneOffset(),
+      is_bot: !!(n.webdriver || /bot|crawl|spider|scrape|headless/i.test(n.userAgent))
+    };
+    var x = new XMLHttpRequest();
+    x.open("POST", "https://b2b.awardprospect.com/api/website-visit", true);
+    x.setRequestHeader("Content-Type", "application/json");
+    x.send(JSON.stringify(data));
+  } catch(e) {}
+})();
+            `,
+          }}
+        />
       </body>
     </html>
   );
