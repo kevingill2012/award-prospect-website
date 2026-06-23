@@ -8,8 +8,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { tr } from "@/lib/i18n";
 import { COMPANY } from "@/lib/constants";
 
-const WHATSAPP_NUMBER = "85244465035";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=85244465035";
 
 export default function Contact() {
   const { lang } = useLanguage();
