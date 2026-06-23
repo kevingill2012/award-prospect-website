@@ -220,7 +220,7 @@ export const t: TranslationDict = {
     en: "From overseas sourcing to global delivery — we handle logistics and warehousing end-to-end. Hong Kong is our hub; the world is our delivery zone.",
     "zh-CN": "从海外寻源到全球发货，物流仓储一手包办。香港为枢纽，发往世界各地。",
     "zh-TW": "從海外尋源到全球發貨，物流倉儲一手包辦。香港為樞紐，發往世界各地。",
-    ar: "من المستودع الخارجي إلى المنصة المحلية — نتولى الخدمات اللوجستية والتخزين من البداية إلى النهاية. أنت تركز على المبيعات.",
+    ar: "من التوريد الخارجي إلى التسليم العالمي — نتولى الخدمات اللوجستية والتخزين من البداية إلى النهاية. هونغ كونغ هي مركزنا؛ العالم هو منطقة التسليم لدينا.",
   },
   "cap.2.p1": {
     en: "Self-operated climate-controlled warehouse in Hong Kong — meets strict temperature & humidity requirements for health products and cosmetics",
@@ -232,13 +232,13 @@ export const t: TranslationDict = {
     en: "Hong Kong free-port re-export — goods flow in and out without tariff friction, shipped directly to buyers across Asia, the Middle East, and beyond",
     "zh-CN": "香港自由港转口——货物进出零关税摩擦，直发亚洲各地、中东及其他海外市场",
     "zh-TW": "香港自由港轉口——貨物進出零關稅摩擦，直發亞洲各地、中東及其他海外市場",
-    ar: "شبكة مستودعات جمركية عبر شنتشن وقوانغتشو ونينغبو والموانئ الرئيسية الأخرى — توزيع وطني سريع بعد التخليص الجمركي",
+    ar: "إعادة التصدير من ميناء هونغ كونغ الحر — البضائع تتدفق داخلاً وخارجاً دون احتكاك جمركي، وتشحن مباشرة إلى المشترين في جميع أنحاء آسيا والشرق الأوسط وما وراءهما",
   },
   "cap.2.p3": {
     en: "End-to-end logistics tracking — every node from overseas pickup to final delivery, visible in real time, wherever the destination",
     "zh-CN": "全程物流追踪系统，从海外提货到最终交付，无论目的地在哪里，每个节点实时可见",
     "zh-TW": "全程物流追蹤系統，從海外提貨到最終交付，無論目的地在哪裡，每個節點實時可見",
-    ar: "تتبع لوجستي شامل — كل عقدة من الاستلام الخارجي إلى التسليم النهائي في الصين، مرئية في الوقت الفعلي",
+    ar: "تتبع لوجستي شامل — كل عقدة من الاستلام الخارجي إلى التسليم النهائي، مرئية في الوقت الفعلي، أينما كانت الوجهة",
   },
   "cap.2.p4": {
     en: "Multi-modal freight — sea, air, and land — flexible combinations optimized for volume, speed, and cost",
@@ -452,7 +452,7 @@ export const t: TranslationDict = {
     en: "Expanding in two directions — sourcing from more origins (adding the Middle East and Southeast Asia to our ANZ, Japan-Korea, Europe, and North America base) and distributing to more destinations (deepening our buyer network across Southeast Asia, the Middle East, and Africa). Hong Kong remains our anchor — goods flow in from the world, and out to the world. Continued investment in digital tools to enhance supply chain efficiency and transparency.",
     "zh-CN": "双向拓展——采购端：在巩固澳新、日韩、欧美基础上，开辟中东、东南亚等新货源市场；分销端：深化东南亚、中东、非洲等地的买家网络，让更多海外经销商通过香港获得优质正品货源。香港始终是核心枢纽——全球货源汇入，再发往全球市场。持续投入数字化工具，用技术提升供应链效率和透明度。",
     "zh-TW": "雙向拓展——採購端：在鞏固澳新、日韓、歐美基礎上，開闢中東、東南亞等新貨源市場；分銷端：深化東南亞、中東、非洲等地的買家網絡，讓更多海外經銷商通過香港獲得優質正品貨源。香港始終是核心樞紐——全球貨源匯入，再發往全球市場。持續投入數字化工具，用技術提升供應鏈效率和透明度。",
-    ar: "التوسع أفقيًا في فئات جديدة — من الصحة والجمال إلى الأم والطفل والعناية الشخصية والأغذية والمشروبات. التوسع جغرافيًا — تعزيز شبكاتنا في أستراليا ونيوزيلندا واليابان وكوريا وأوروبا وأمريكا الشمالية مع استكشاف أسواق المصادر الناشئة في الشرق الأوسط وجنوب شرق آسيا. الاستثمار المستمر في الأدوات الرقمية لتعزيز كفاءة وشفافية سلسلة التوريد.",
+    ar: "التوسع في اتجاهين — التوريد من مصادر أكثر (إضافة الشرق الأوسط وجنوب شرق آسيا إلى قاعدتنا في أستراليا ونيوزيلندا واليابان وكوريا وأوروبا وأمريكا الشمالية) والتوزيع إلى وجهات أكثر (تعميق شبكة المشترين لدينا عبر جنوب شرق آسيا والشرق الأوسط وأفريقيا). تبقى هونغ كونغ مرتكزنا — البضائع تتدفق من العالم، وإلى العالم. استثمار مستمر في الأدوات الرقمية لتعزيز كفاءة وشفافية سلسلة التوريد.",
   },
 
   // ---- Partners ----
@@ -466,7 +466,7 @@ export const t: TranslationDict = {
     en: "Over 50 international brands and tier-1 distributors maintain long-term partnerships with us across health & nutrition, beauty & skincare, personal care, and mother & baby — the four pillars of cross-border e-commerce.",
     "zh-CN": "超过50家国际知名品牌和一级经销商与我们建立了长期稳定的合作关系，涵盖保健营养、美妆护肤、个人护理和母婴用品四大核心品类。",
     "zh-TW": "超過50家國際知名品牌和一級經銷商與我們建立了長期穩定的合作關係，涵蓋保健營養、美妝護膚、個人護理和母嬰用品四大核心品類。",
-    ar: "موثوق من قبل قادة الفئات في الصحة والجمال والعناية الشخصية.",
+    ar: "أكثر من 50 علامة تجارية دولية وموزع من الدرجة الأولى يحتفظون بشراكات طويلة الأمد معنا عبر الصحة والتغذية والجمال والعناية بالبشرة والعناية الشخصية والأم والطفل — الركائز الأربع للتجارة الإلكترونية عبر الحدود.",
   },
 
   // ---- Contact ----
@@ -480,7 +480,7 @@ export const t: TranslationDict = {
     en: "Whether you're a brand entering Asia, or a distributor seeking quality supply from Hong Kong — we'd love to hear from you. Drop us a message and we'll respond within 24 hours.",
     "zh-CN": "无论您是希望进入亚洲市场的品牌方，还是寻找香港正品货源的海外经销商——欢迎留言，我们会在24小时内回复。",
     "zh-TW": "無論您是希望進入亞洲市場的品牌方，還是尋找香港正品貨源的海外經銷商——歡迎留言，我們會在24小時內回覆。",
-    ar: "سواء كنت علامة تجارية تتطلع لدخول الصين، أو منصة تبحث عن إمدادات موثوقة — نود أن نسمع منك.",
+    ar: "سواء كنت علامة تجارية تتطلع لدخول آسيا، أو موزعاً يبحث عن إمدادات عالية الجودة من هونغ كونغ — يسعدنا أن نسمع منك. أرسل لنا رسالة وسنرد عليك خلال 24 ساعة.",
   },
   "contact.addressLabel": {
     en: "Address",
@@ -575,10 +575,10 @@ export const t: TranslationDict = {
     ar: "هونغ كونغ · منذ 2019",
   },
   "footer.copyright": {
-    en: "© 2025 Award Prospect Limited. All rights reserved.",
-    "zh-CN": "© 2025 澳華發展有限公司 版权所有",
-    "zh-TW": "© 2025 澳華發展有限公司 版權所有",
-    ar: "© 2025 Award Prospect Limited. جميع الحقوق محفوظة.",
+    en: "© {year} Award Prospect Limited. All rights reserved.",
+    "zh-CN": "© {year} 澳華發展有限公司 版权所有",
+    "zh-TW": "© {year} 澳華發展有限公司 版權所有",
+    ar: "© {year} Award Prospect Limited. جميع الحقوق محفوظة.",
   },
 
   // ---- Footer Columns ----

@@ -8,7 +8,9 @@ import { tr } from "@/lib/i18n";
 
 const BADGE_ICONS = [Shield, FileCheck, Users];
 
-function CountUp({ target, suffix, prefix, inView }: { target: number; suffix: string; prefix: string; inView: boolean }) {
+function CountUp({ target, suffix, prefix }: { target: number; suffix: string; prefix: string }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!inView) return;
@@ -21,7 +23,7 @@ function CountUp({ target, suffix, prefix, inView }: { target: number; suffix: s
     }, duration / steps);
     return () => clearInterval(timer);
   }, [target, inView]);
-  return <span>{prefix}{count}{suffix}</span>;
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
 export default function WhyUs() {
@@ -62,7 +64,7 @@ export default function WhyUs() {
               className="rounded-2xl border border-white/8 bg-white/[0.03] p-8 text-center card-glow"
             >
               <div className="font-display text-4xl font-bold text-coral">
-                <CountUp target={metric.value} suffix={metric.suffix} prefix={metric.prefix} inView={inView} />
+                <CountUp target={metric.value} suffix={metric.suffix} prefix={metric.prefix} />
               </div>
               <p className="mt-3 text-sm leading-snug text-text-muted">
                 {tr(`why.m${i + 1}.label`, lang)}

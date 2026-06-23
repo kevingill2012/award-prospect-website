@@ -157,7 +157,7 @@ export default function Footer() {
       <div className="border-t border-white/6">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-6 text-center md:flex-row md:justify-between">
           <p className="text-xs text-text-muted/50">
-            {tr("footer.copyright", lang)}
+            {tr("footer.copyright", lang).replace("{year}", String(new Date().getFullYear()))}
           </p>
           <div className="flex gap-6">
             <a href="/privacy" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">

@@ -11,14 +11,14 @@ const BRAND_ROW1 = [
 ];
 const BRAND_ROW2 = [
   "Estée Lauder", "La Mer", "Lancôme", "SK-II", "Clinique",
-  "Dior", "Shiseido", "Bioderma", "Avène", "Vaseline",
+  "Dior", "Shiseido", "Bioderma", "Avène", "La Roche-Posay",
 ];
 
 function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) {
   return (
     <div className="flex overflow-hidden py-4">
       <div className={`flex shrink-0 gap-12 px-6 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-        {[...items, ...items, ...items].map((name, i) => (
+        {[...items, ...items].map((name, i) => (
           <span
             key={`${name}-${i}`}
             className="whitespace-nowrap font-display text-2xl font-semibold text-text-muted/25 transition-colors hover:text-coral/60 sm:text-3xl"
