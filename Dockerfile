@@ -3,6 +3,7 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Install pnpm
+ENV CI=true
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Dependencies layer (cached unless package.json changes)
