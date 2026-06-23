@@ -34,7 +34,7 @@ export default function Timeline() {
 
         <div ref={timelineRef} className="relative mt-20">
           {/* Scroll-driven vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px md:left-1/2 md:-translate-x-px">
+          <div className="absolute start-4 top-0 bottom-0 w-px md:left-1/2 md:-translate-x-px">
             {/* Faded background track — always visible */}
             <div className="absolute inset-0 bg-gradient-to-b from-coral/15 via-violet-deep/10 to-transparent" />
             {/* Animated drawing line — reveals as you scroll */}
@@ -55,16 +55,16 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true, margin: "-60px" }}
-                className={`relative mb-12 pl-12 md:mb-16 md:pl-0 md:w-1/2 ${
-                  isLeft ? "md:pr-12 md:text-right" : "md:ml-auto md:pl-12"
+                className={`relative mb-12 ps-12 md:mb-16 md:ps-0 md:w-1/2 ${
+                  isLeft ? "md:pe-12 md:text-end" : "md:ms-auto md:ps-12"
                 }`}
               >
                 {/* Year watermark — giant translucent year behind content */}
                 <span
                   className={`absolute top-0 select-none font-display font-bold leading-none text-white/[0.025] pointer-events-none text-[100px] md:text-[130px] ${
                     isLeft
-                      ? "left-0 md:left-auto md:right-0"
-                      : "left-0 md:left-0"
+                      ? "start-0 md:start-auto md:end-0"
+                      : "start-0 md:start-0"
                   }`}
                   style={{ transform: "translateY(-22%)" }}
                 >
@@ -75,8 +75,8 @@ export default function Timeline() {
                 <div
                   className={`absolute top-1.5 md:top-2 ${
                     isLeft
-                      ? "left-[calc(0.5rem-5.5px)] md:left-auto md:right-[-6px]"
-                      : "left-[calc(0.5rem-5.5px)] md:left-[-6px]"
+                      ? "start-[calc(0.5rem-5.5px)] md:start-auto md:end-[-6px]"
+                      : "start-[calc(0.5rem-5.5px)] md:start-[-6px]"
                   }`}
                 >
                   {/* Expanding ripple ring */}

@@ -209,7 +209,7 @@ export default function Contact() {
               className="relative max-w-md rounded-2xl bg-deep p-8 text-center shadow-2xl"
             >
               <button onClick={dismissPopup}
-                className="absolute right-4 top-4 rounded-full p-1 text-text-muted hover:bg-white/5 hover:text-text-primary">
+                className="absolute end-4 top-4 rounded-full p-1 text-text-muted hover:bg-white/5 hover:text-text-primary">
                 <X size={18} />
               </button>
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/15">
