@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { tr } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Footer from "@/sections/Footer";
 
 export default function LegalLayout({
   titleKey,
@@ -49,11 +50,7 @@ export default function LegalLayout({
       </main>
 
       {/* Footer */}
-      <div className="border-t border-white/6 py-8 text-center">
-        <p className="text-xs text-text-muted/40">
-          &copy; {new Date().getFullYear()} Award Prospect Limited
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }

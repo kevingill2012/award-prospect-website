@@ -23,16 +23,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Award Prospect — Global Sourcing & Cross-Border Supply Chain",
   description:
-    "Award Prospect Limited is a Hong Kong-based cross-border procurement and supply chain company. We source directly from brands and authorized distributors, manage end-to-end logistics, and serve major platforms including Tmall Global, Suning, and Pinduoduo.",
+    "Award Prospect Limited is a Hong Kong-based cross-border procurement and supply chain company. We source authentic goods from worldwide department stores, duty-free shops, and authorized distributors, then distribute to platforms and buyers across Asia, the Middle East, and beyond.",
   keywords: [
     "cross-border procurement",
     "global sourcing",
     "supply chain",
     "Hong Kong",
-    "China distribution",
+    "wholesale distribution",
     "brand sourcing",
     "bonded warehouse",
+    "Asia distribution",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon-new.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/favicon-256.png", sizes: "256x256", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

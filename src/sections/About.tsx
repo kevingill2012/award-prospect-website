@@ -84,10 +84,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center"
+            className="overflow-hidden rounded-2xl border border-white/8"
           >
-            <img src="/logo-about.png" alt="Award Prospect"
-              className="h-auto w-auto max-w-[500px] object-contain opacity-90" />
+            <img
+              src="/images/stock/office/office-asian-casual-23.jpg"
+              alt="Team collaboration"
+              className="aspect-[4/3] w-full object-cover"
+            />
           </motion.div>
         </div>
       </div>

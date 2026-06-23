@@ -8,6 +8,12 @@ import { tr } from "@/lib/i18n";
 
 const ICONS = [ShoppingBag, Ship, BarChart3];
 
+const CARD_IMAGES = [
+  "/images/stock/business/team-meeting-office-04.jpg",
+  "/images/stock/logistics/shipping-yard-aerial-10.jpg",
+  "/images/stock/world/global-trade-routes-05.jpg",
+];
+
 export default function Capabilities() {
   const { lang } = useLanguage();
   const ref = useRef(null);
@@ -48,32 +54,42 @@ export default function Capabilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
                 viewport={{ once: true }}
-                className="group relative rounded-2xl border border-white/8 bg-deep/60 p-8 card-glow"
+                className="group relative overflow-hidden rounded-2xl border border-white/8 bg-deep/60 card-glow"
               >
                 <div className="absolute inset-x-0 top-0 h-0.5 rounded-t-2xl bg-gradient-to-r from-coral via-violet-deep to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="mb-5 inline-flex rounded-xl bg-coral/10 p-3">
-                  <Icon className="h-6 w-6 text-coral" />
+                {/* Card header image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={CARD_IMAGES[idx]}
+                    alt=""
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="font-display text-xl font-semibold">
-                  {tr(`cap.${cardIdx}.title`, lang)}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {tr(`cap.${cardIdx}.tagline`, lang)}
-                </p>
-                <ul className="mt-5 space-y-2.5">
-                  {points.map((point) => (
-                    <li
-                      key={point.slice(0, 20)}
-                      className="flex gap-2.5 text-sm text-text-muted"
-                    >
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-coral/70" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 border-t border-white/6 pt-4 text-xs italic text-text-muted/70">
-                  {tr(`cap.${cardIdx}.footer`, lang)}
-                </p>
+                <div className="p-8">
+                  <div className="mb-5 inline-flex rounded-xl bg-coral/10 p-3">
+                    <Icon className="h-6 w-6 text-coral" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold">
+                    {tr(`cap.${cardIdx}.title`, lang)}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    {tr(`cap.${cardIdx}.tagline`, lang)}
+                  </p>
+                  <ul className="mt-5 space-y-2.5">
+                    {points.map((point) => (
+                      <li
+                        key={point.slice(0, 20)}
+                        className="flex gap-2.5 text-sm text-text-muted"
+                      >
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-coral/70" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-t border-white/6 pt-4 text-xs italic text-text-muted/70">
+                    {tr(`cap.${cardIdx}.footer`, lang)}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

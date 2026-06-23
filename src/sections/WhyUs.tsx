@@ -29,8 +29,9 @@ export default function WhyUs() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  const isZh = lang === "zh-CN" || lang === "zh-TW";
   const metrics = [
-    { value: 70, suffix: "M+", prefix: "HKD " },
+    { value: isZh ? 70 : 700, suffix: isZh ? "万+" : "K+", prefix: "" },
     { value: 50, suffix: "+", prefix: "" },
     { value: 100, suffix: "+", prefix: "" },
     { value: 100, suffix: "%", prefix: "" },
@@ -69,6 +70,21 @@ export default function WhyUs() {
             </motion.div>
           ))}
         </div>
+
+        {/* Visual separator — business handshake */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 overflow-hidden rounded-2xl border border-white/8"
+        >
+          <img
+            src="/images/stock/logistics/warehouse-expansive-12.jpg"
+            alt="Modern logistics warehouse"
+            className="aspect-[21/9] w-full object-cover"
+          />
+        </motion.div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {[1, 2, 3].map((n, i) => {
