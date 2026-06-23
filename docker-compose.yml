@@ -1,0 +1,7 @@
+services:
+  award-website:
+    build: .
+    container_name: award-website
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"

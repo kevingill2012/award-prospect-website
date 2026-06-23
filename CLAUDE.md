@@ -69,13 +69,16 @@ Posts to an **external B2B backend** at `https://b2b.awardprospect.com/api/websi
 
 ## Deployment
 
-See `deploy.sh` — deploys the static `out/` directory to Netcup VPS (152.53.82.24, SSH port 37210, key `~/.ssh/netcup_space_center_ed25519`).
+See `deploy.sh` — deploys to Netcup VPS (152.53.82.24, SSH port 37210, key `~/.ssh/netcup_space_center_ed25519`).
+
+The server has Node 22 + pnpm 10. The repo is cloned at `/opt/award-website-repo` and nginx serves from `/opt/award-website-repo/out/`.
 
 The script:
-1. Restructures HTML files into directories for clean URLs (`/privacy/index.html`, etc.)
-2. Tars and SCPs `out/` to `/opt/award-website`
-3. Reloads Nginx
-4. Health-checks via `curl` on `127.0.0.1:80` with Host header `www.awardprospect.com`
+1. `git pull origin main` on the server — only changed files transfer
+2. `pnpm install --frozen-lockfile && pnpm build` on the server
+3. Restructures HTML files into directories for clean URLs (`/privacy/index.html`, etc.)
+4. Reloads nginx
+5. Health-checks via `curl` on `127.0.0.1:80` with Host header `www.awardprospect.com`
 
 **Always ask Kevin before deploying.** The deploy script is committed but deployment requires Kevin's approval.
 
