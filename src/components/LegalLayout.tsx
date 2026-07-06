@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
+import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { tr } from "@/lib/i18n";
@@ -23,15 +24,13 @@ export default function LegalLayout({
       {/* Top bar */}
       <div className="glass sticky top-0 z-50">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-text-primary"
           >
             <ArrowLeft size={16} />
-            <span className="font-display font-bold">
-              Award<span className="text-coral">Prospect</span>
-            </span>
-          </a>
+            <img src="/logo-footer.png" alt={tr("company.name", lang)} className="h-10 w-auto" />
+          </Link>
           <LanguageSwitcher />
         </div>
       </div>

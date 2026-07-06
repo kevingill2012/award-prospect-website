@@ -16,6 +16,7 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -37,7 +38,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
 
     try {
       // Detect country via Cloudflare trace
@@ -68,6 +69,8 @@ export default function Contact() {
     }
 
     // Show friendly popup and reset form
+    setSubmitting(false);
+    setSent(true);
     setShowPopup(true);
     setForm({ name: "", email: "", message: "" });
   };
@@ -108,7 +111,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-semibold">{tr("contact.addressLabel", lang)}</h4>
-                <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-text-muted">{COMPANY.address}</p>
+                <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-text-muted">{tr("company.address", lang)}</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -159,6 +162,29 @@ export default function Contact() {
             className="h-full"
           >
             <form onSubmit={handleSubmit} className="flex h-full flex-col rounded-2xl border border-white/8 bg-deep/60 p-8">
+              <div className="mb-5 flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/[0.035] px-4 py-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-coral">
+                    {tr("contact.statusLabel", lang)}
+                  </p>
+                  <p className="mt-1 text-sm text-text-muted" aria-live="polite">
+                    {submitting
+                      ? tr("contact.sending", lang)
+                      : sent
+                        ? tr("contact.sent", lang)
+                        : tr("contact.readyStatus", lang)}
+                  </p>
+                </div>
+                <span
+                  className={`h-3 w-3 rounded-full ${
+                    submitting
+                      ? "animate-pulse bg-coral"
+                      : sent
+                        ? "bg-green-400"
+                        : "bg-white/25"
+                  }`}
+                />
+              </div>
               <div className="flex flex-1 flex-col space-y-5">
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-sm font-medium">{tr("contact.nameLabel", lang)}</label>
@@ -179,9 +205,9 @@ export default function Contact() {
                     placeholder={tr("contact.msgPlaceholder", lang)} />
                 </div>
               </div>
-              <button type="submit" disabled={sent}
-                className="mt-5 flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-coral py-3.5 text-sm font-semibold text-white transition-shadow hover:shadow-[0_0_24px_rgba(233,69,96,0.4)] disabled:opacity-60">
-                {sent ? tr("contact.sent", lang) : tr("contact.send", lang)}
+              <button type="submit" disabled={submitting || sent}
+                className="focus-tech mt-5 flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-coral py-3.5 text-sm font-semibold text-white transition-shadow hover:shadow-[0_0_24px_rgba(233,69,96,0.4)] disabled:opacity-60">
+                {submitting ? tr("contact.sending", lang) : sent ? tr("contact.sent", lang) : tr("contact.send", lang)}
                 <Send size={16} />
               </button>
             </form>

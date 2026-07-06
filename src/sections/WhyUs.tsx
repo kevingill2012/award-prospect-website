@@ -32,8 +32,9 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const isZh = lang === "zh-CN" || lang === "zh-TW";
+  const isAr = lang === "ar";
   const metrics = [
-    { value: isZh ? 70 : 700, suffix: isZh ? "万+" : "K+", prefix: "" },
+    { value: isZh ? 70 : 700, suffix: isZh ? "万+" : isAr ? " ألف+" : "K+", prefix: "" },
     { value: 50, suffix: "+", prefix: "" },
     { value: 100, suffix: "+", prefix: "" },
     { value: 100, suffix: "%", prefix: "" },
@@ -83,7 +84,7 @@ export default function WhyUs() {
         >
           <img
             src="/images/stock/logistics/warehouse-expansive-12.jpg"
-            alt="Modern logistics warehouse"
+            alt=""
             className="aspect-[21/9] w-full object-cover"
           />
         </motion.div>

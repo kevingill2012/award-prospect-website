@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 import { useLanguage } from "@/components/LanguageProvider";
 import { tr } from "@/lib/i18n";
@@ -46,7 +47,7 @@ export default function Footer() {
             <div className="flex flex-col items-center text-center">
               <img
                 src="/logo-footer.png"
-                alt="Award Prospect"
+                alt={tr("company.name", lang)}
                 className="h-20 w-auto"
               />
               <p className="mt-3 text-sm leading-relaxed text-text-muted">
@@ -56,7 +57,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-text-muted">
               <div className="flex items-start gap-2">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-coral/60" />
-                <span className="text-xs leading-relaxed">{COMPANY.address}</span>
+                <span className="text-xs leading-relaxed">{tr("company.address", lang)}</span>
               </div>
               <a
                 href={`mailto:${COMPANY.email}`}
@@ -77,6 +78,7 @@ export default function Footer() {
               {[
                 { href: "#about", key: "nav.about" },
                 { href: "#capabilities", key: "nav.capabilities" },
+                { href: "#traceability", key: "nav.traceability" },
                 { href: "#timeline", key: "nav.timeline" },
                 { href: "#partners", key: "nav.partners" },
                 { href: "#contact", key: "nav.contact" },
@@ -105,12 +107,12 @@ export default function Footer() {
                 { href: "/cookies", key: "footer.cookies" },
               ].map(({ href, key }) => (
                 <li key={key}>
-                  <a
+                  <Link
                     href={href}
                     className="text-sm text-text-muted transition-colors hover:text-text-primary"
                   >
                     {tr(key, lang)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -160,15 +162,15 @@ export default function Footer() {
             {tr("footer.copyright", lang).replace("{year}", String(new Date().getFullYear()))}
           </p>
           <div className="flex gap-6">
-            <a href="/privacy" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
+            <Link href="/privacy" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
               {tr("footer.privacy", lang)}
-            </a>
-            <a href="/terms" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
+            </Link>
+            <Link href="/terms" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
               {tr("footer.terms", lang)}
-            </a>
-            <a href="/cookies" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
+            </Link>
+            <Link href="/cookies" className="text-xs text-text-muted/50 transition-colors hover:text-text-muted">
               {tr("footer.cookies", lang)}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

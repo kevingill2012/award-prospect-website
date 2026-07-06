@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import LegalLayout, { Section } from "@/components/LegalLayout";
 import { tr } from "@/lib/i18n";
 import { useLanguage } from "@/components/LanguageProvider";
-import { COMPANY } from "@/lib/constants";
 
 export default function PrivacyPage() {
   const { lang } = useLanguage();
@@ -26,9 +26,9 @@ export default function PrivacyPage() {
 
       <Section titleKey="privacy.cookies.title">
         {tr("privacy.cookies.text", lang)}{" "}
-        <a href="/cookies" className="text-coral hover:underline">
-          Cookie Policy
-        </a>
+        <Link href="/cookies" className="text-coral hover:underline">
+          {tr("footer.cookies", lang)}
+        </Link>
         .
       </Section>
 
@@ -38,15 +38,15 @@ export default function PrivacyPage() {
 
       <Section titleKey="privacy.contact.title">
         <p className="whitespace-pre-line">
-          Award Prospect Limited<br />
-          {COMPANY.address}<br />
+          {tr("company.name", lang)}<br />
+          {tr("company.address", lang)}<br />
           <br />
-          Email:{" "}
+          {tr("contact.emailLabel", lang)}:{" "}
           <a
-            href={`mailto:${COMPANY.email}`}
+            href="mailto:info@awardprospect.com"
             className="text-coral hover:underline"
           >
-            {COMPANY.email}
+            info@awardprospect.com
           </a>
         </p>
       </Section>

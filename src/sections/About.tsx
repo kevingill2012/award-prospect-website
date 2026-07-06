@@ -88,7 +88,7 @@ export default function About() {
           >
             <img
               src="/images/stock/office/office-asian-casual-23.jpg"
-              alt="Team collaboration"
+              alt=""
               className="aspect-[4/3] w-full object-cover"
             />
           </motion.div>

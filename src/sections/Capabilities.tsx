@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ShoppingBag, Ship, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -18,6 +18,7 @@ export default function Capabilities() {
   const { lang } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [activeCard, setActiveCard] = useState(1);
 
   function getPoints(cardIdx: number): string[] {
     const result: string[] = [];
@@ -43,30 +44,54 @@ export default function Capabilities() {
           <p className="section-subtitle mx-auto">{tr("cap.subtitle", lang)}</p>
         </motion.div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid auto-rows-fr items-stretch gap-6 md:grid-cols-3">
           {[1, 2, 3].map((cardIdx, idx) => {
             const Icon = ICONS[cardIdx - 1];
             const points = getPoints(cardIdx);
+            const active = activeCard === cardIdx;
             return (
-              <motion.div
+              <motion.button
                 key={cardIdx}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setActiveCard(cardIdx)}
+                onFocus={() => setActiveCard(cardIdx)}
+                onMouseEnter={() => setActiveCard(cardIdx)}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl border border-white/8 bg-deep/60 card-glow"
+                className={`focus-tech group relative flex h-full flex-col overflow-hidden rounded-2xl border text-start card-glow ${
+                  active
+                    ? "border-coral/40 bg-deep/80 shadow-[0_0_34px_rgba(233,69,96,0.14)]"
+                    : "border-white/8 bg-deep/60"
+                }`}
               >
-                <div className="absolute inset-x-0 top-0 h-0.5 rounded-t-2xl bg-gradient-to-r from-coral via-violet-deep to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <div
+                  className={`absolute inset-x-0 top-0 h-0.5 rounded-t-2xl bg-gradient-to-r from-coral via-violet-deep to-transparent transition-opacity ${
+                    active ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
+                />
                 {/* Card header image */}
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-40 shrink-0 overflow-hidden">
                   <img
                     src={CARD_IMAGES[idx]}
                     alt=""
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`h-full w-full object-cover transition-transform duration-500 ${
+                      active ? "scale-105" : "group-hover:scale-105"
+                    }`}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-deep/10 to-transparent" />
+                  <div className="absolute bottom-4 start-4 rounded-full border border-coral/25 bg-deep/70 px-3 py-1 text-xs font-semibold text-coral backdrop-blur">
+                    {tr(`cap.${cardIdx}.signal`, lang)}
+                  </div>
                 </div>
-                <div className="p-8">
-                  <div className="mb-5 inline-flex rounded-xl bg-coral/10 p-3">
+                <div className="flex flex-1 flex-col p-8">
+                  <div
+                    className={`mb-5 inline-flex rounded-xl p-3 transition-colors ${
+                      active ? "bg-coral/15" : "bg-coral/10"
+                    }`}
+                  >
                     <Icon className="h-6 w-6 text-coral" />
                   </div>
                   <h3 className="font-display text-xl font-semibold">
@@ -81,16 +106,18 @@ export default function Capabilities() {
                         key={point.slice(0, 20)}
                         className="flex gap-2.5 text-sm text-text-muted"
                       >
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-coral/70" />
+                        <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${
+                          active ? "bg-coral shadow-[0_0_10px_rgba(233,69,96,0.6)]" : "bg-coral/70"
+                        }`} />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-6 border-t border-white/6 pt-4 text-xs italic text-text-muted/70">
+                  <p className="mt-auto min-h-[76px] border-t border-white/6 pt-4 text-xs italic leading-relaxed text-text-muted/70">
                     {tr(`cap.${cardIdx}.footer`, lang)}
                   </p>
                 </div>
-              </motion.div>
+              </motion.button>
             );
           })}
         </div>

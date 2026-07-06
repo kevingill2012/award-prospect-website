@@ -2,6 +2,7 @@ import Navbar from "@/sections/Navbar";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Capabilities from "@/sections/Capabilities";
+import Traceability from "@/sections/Traceability";
 import WhyUs from "@/sections/WhyUs";
 import Timeline from "@/sections/Timeline";
 import Partners from "@/sections/Partners";
@@ -14,11 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
+        <Traceability />
         <Capabilities />
-        <WhyUs />
         <Timeline />
         <Partners />
+        <About />
+        <WhyUs />
         <Contact />
       </main>
       <Footer />

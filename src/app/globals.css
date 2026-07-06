@@ -15,13 +15,31 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  min-height: 100%;
+  min-width: 0;
+  width: 100%;
 }
 
 body {
   font-family: var(--font-body);
   background: var(--color-deep);
   color: var(--color-text-primary);
+  min-height: 100vh;
+  min-height: 100svh;
+  min-width: 0;
+  width: 100%;
   overflow-x: hidden;
+}
+
+main {
+  flex: 1 0 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+section {
+  min-width: 0;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -53,11 +71,28 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+@keyframes route-pulse {
+  0% { transform: translateX(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+@keyframes data-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 .animate-marquee {
   animation: marquee 25s linear infinite;
 }
 .animate-marquee-reverse {
   animation: marquee 30s linear infinite reverse;
+}
+.animate-route-pulse {
+  animation: route-pulse 2.8s ease-in-out infinite;
+}
+.animate-data-shimmer {
+  animation: data-shimmer 3.5s linear infinite;
+  background-size: 200% 100%;
 }
 
 .card-glow {
@@ -66,6 +101,39 @@ body {
 .card-glow:hover {
   box-shadow: 0 0 30px rgba(233, 69, 96, 0.15), 0 0 60px rgba(83, 52, 131, 0.08);
   transform: translateY(-4px);
+}
+.focus-tech {
+  outline: none;
+}
+.focus-tech:focus-visible {
+  box-shadow: 0 0 0 2px rgba(234, 234, 234, 0.9), 0 0 0 5px rgba(233, 69, 96, 0.35);
+}
+.tech-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(26, 26, 46, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+.replica-hotspot {
+  position: absolute;
+  display: block;
+  border-radius: 12px;
+  outline: none;
+}
+.replica-hotspot:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.95),
+    0 0 0 5px rgba(255, 88, 95, 0.65);
+  background: rgba(255, 88, 95, 0.08);
 }
 
 .section {
@@ -89,4 +157,21 @@ body {
   font-size: 1.125rem;
   max-width: 560px;
   line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+  .card-glow:hover {
+    transform: none;
+  }
 }

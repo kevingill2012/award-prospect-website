@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, useScroll } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 import { tr } from "@/lib/i18n";
@@ -10,6 +10,7 @@ export default function Timeline() {
   const headingRef = useRef(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const inView = useInView(headingRef, { once: true, margin: "-80px" });
+  const [activeNode, setActiveNode] = useState(4);
 
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -49,14 +50,22 @@ export default function Timeline() {
             const yearText = tr(`time.${n}.year`, lang);
 
             return (
-              <motion.div
+              <motion.button
                 key={n}
+                type="button"
+                aria-pressed={activeNode === n}
+                onClick={() => setActiveNode(n)}
+                onFocus={() => setActiveNode(n)}
                 initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true, margin: "-60px" }}
-                className={`relative mb-12 ps-12 md:mb-16 md:ps-0 md:w-1/2 ${
+                className={`focus-tech relative mb-12 rounded-2xl ps-12 text-start transition-all md:mb-16 md:ps-0 md:w-1/2 ${
                   isLeft ? "md:pe-12 md:text-end" : "md:ms-auto md:ps-12"
+                } ${
+                  activeNode === n
+                    ? "text-text-primary"
+                    : "text-text-muted hover:text-text-primary"
                 }`}
               >
                 {/* Year watermark — giant translucent year behind content */}
@@ -91,11 +100,19 @@ export default function Timeline() {
                     viewport={{ once: true }}
                   />
                   {/* Core dot */}
-                  <div className="relative z-10 h-3 w-3 rounded-full border-2 border-coral bg-deep shadow-[0_0_8px_rgba(233,69,96,0.5)]" />
+                  <div
+                    className={`relative z-10 h-3 w-3 rounded-full border-2 border-coral bg-deep ${
+                      activeNode === n
+                        ? "shadow-[0_0_18px_rgba(233,69,96,0.9)]"
+                        : "shadow-[0_0_8px_rgba(233,69,96,0.5)]"
+                    }`}
+                  />
                 </div>
 
                 {/* Content */}
-                <span className="relative z-10 inline-block rounded-full bg-coral/10 px-3 py-1 text-xs font-semibold text-coral">
+                <span className={`relative z-10 inline-block rounded-full px-3 py-1 text-xs font-semibold text-coral ${
+                  activeNode === n ? "bg-coral/15" : "bg-coral/10"
+                }`}>
                   {yearText}
                 </span>
                 <h3 className="relative z-10 mt-2 font-display text-xl font-semibold">
@@ -104,10 +121,35 @@ export default function Timeline() {
                 <p className="relative z-10 mt-2 text-sm leading-relaxed text-text-muted">
                   {tr(`time.${n}.text`, lang)}
                 </p>
-              </motion.div>
+              </motion.button>
             );
           })}
         </div>
+
+        <motion.div
+          key={activeNode}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+          className="tech-panel mt-4 rounded-3xl p-6"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
+            {tr("time.activeLabel", lang)}
+          </p>
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 className="font-display text-2xl font-semibold">
+                {tr(`time.${activeNode}.year`, lang)} · {tr(`time.${activeNode}.title`, lang)}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                {tr(`time.${activeNode}.text`, lang)}
+              </p>
+            </div>
+            <div className="shrink-0 rounded-2xl border border-coral/20 bg-coral/10 px-4 py-3 text-sm font-semibold text-coral">
+              {tr(`time.${activeNode}.signal`, lang)}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
