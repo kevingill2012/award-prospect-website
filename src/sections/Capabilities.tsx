@@ -32,7 +32,7 @@ export default function Capabilities() {
 
   return (
     <section id="capabilities" className="section bg-slate-soft/30">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[92rem] px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

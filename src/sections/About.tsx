@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <section id="about" className="section">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[92rem] px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

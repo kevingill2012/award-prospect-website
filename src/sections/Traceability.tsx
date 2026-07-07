@@ -59,7 +59,7 @@ export default function Traceability() {
     <section id="traceability" className="section relative overflow-hidden">
       <div className="tech-grid absolute inset-0 opacity-20" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-coral/40 to-transparent" />
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-[92rem] px-6">
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 30 }}

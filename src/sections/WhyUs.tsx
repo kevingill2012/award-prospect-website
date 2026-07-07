@@ -42,7 +42,7 @@ export default function WhyUs() {
 
   return (
     <section id="why-us" className="section">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[92rem] px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

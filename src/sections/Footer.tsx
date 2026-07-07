@@ -40,7 +40,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/6 bg-deep">
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-[92rem] px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 — Company */}
           <div className="space-y-4">
@@ -157,7 +157,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/6">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-6 text-center md:flex-row md:justify-between">
+        <div className="mx-auto flex max-w-[92rem] flex-col items-center gap-3 px-6 py-6 text-center md:flex-row md:justify-between">
           <p className="text-xs text-text-muted/50">
             {tr("footer.copyright", lang).replace("{year}", String(new Date().getFullYear()))}
           </p>

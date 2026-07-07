@@ -21,7 +21,7 @@ export default function Timeline() {
 
   return (
     <section id="timeline" className="section bg-slate-soft/30">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-[92rem] px-6">
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 30 }}
